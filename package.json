@@ -1,0 +1,23 @@
+{
+  "name": "hymark",
+  "version": "0.0.0",
+  "description": "Render markup",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "hymark": "lib/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "consolidate": "^0.10.0",
+    "front-matter": "^0.2.0",
+    "gather-stream": "^1.0.0",
+    "nomnom": "^1.8.0"
+  },
+  "devDependencies": {
+    "lab": "^5.0.1"
+  }
+}
