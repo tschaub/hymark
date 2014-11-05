@@ -1,16 +1,36 @@
 {
   "name": "hymark",
   "version": "0.0.0",
-  "description": "Render markup",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Render markup using templates and YAML front-mattered content",
+  "homepage": "https://github.com/tschaub/hymark",
+  "author": {
+    "name": "Tim Schaub",
+    "url": "http://tschaub.net/"
   },
+  "keywords": [
+    "markup",
+    "template",
+    "yaml",
+    "markdown",
+    "html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tschaub/hymark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tschaub/hymark/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://tschaub.mit-license.org/"
+    }
+  ],
+  "main": "lib/index.js",
   "bin": {
     "hymark": "lib/index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "consolidate": "^0.10.0",
     "front-matter": "^0.2.0",
