@@ -38,6 +38,7 @@
     "async": "^0.9.0",
     "consolidate": "^0.10.0",
     "front-matter": "^0.2.0",
+    "fs-extra": "^0.12.0",
     "globby": "^0.1.1",
     "nomnom": "^1.8.1"
   },
