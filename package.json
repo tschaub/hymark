@@ -29,7 +29,7 @@
   ],
   "main": "lib/index.js",
   "bin": {
-    "hymark": "lib/index.js"
+    "hymark": "lib/cli.js"
   },
   "scripts": {
     "test": "lab test"
