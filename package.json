@@ -1,6 +1,6 @@
 {
   "name": "hymark",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Render markup using templates and YAML front-mattered content",
   "homepage": "https://github.com/tschaub/hymark",
   "author": {
