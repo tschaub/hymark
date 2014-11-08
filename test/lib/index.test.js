@@ -121,13 +121,46 @@ lab.experiment('read()', function() {
 
 });
 
+lab.experiment('transform()', function() {
+
+  lab.test('transforms markdown to markup', function(done) {
+    var context = {
+      path: 'foo.md',
+      content: '# bar\n'
+    };
+
+    hymark.transform(context, function(err, ctx) {
+      expect(err).to.be.null();
+      expect(ctx).to.deep.equal({
+        path: 'foo.html',
+        content: '<h1 id="bar">bar</h1>\n'
+      });
+      done();
+    });
+  });
+
+  lab.test('passes markup through unchanged', function(done) {
+    var context = {
+      path: 'foo.html',
+      content: '<blink>bar</blink>\n'
+    };
+
+    hymark.transform(context, function(err, ctx) {
+      expect(err).to.be.null();
+      expect(ctx).to.equal(context);
+      done();
+    });
+  });
+
+});
+
 lab.experiment('render()', function() {
 
   lab.test('returns content when no engine provided', function(done) {
     var content = 'some content';
 
     hymark.render({content: content}, function(err, str, context) {
-      expect(err).to.equal(null);
+      expect(err).to.be.null();
       expect(str).to.equal(content);
       expect(context).to.deep.equal({content: content});
       done();
