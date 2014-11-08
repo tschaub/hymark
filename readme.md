@@ -56,7 +56,7 @@ For example, given the following files:
       _templates/
         page.html
 
-Running `hymark src dist --engine=handlebars --templates=src/_temlates` will produce the following output files:
+Running `hymark src dist --engine=handlebars --templates=src/_templates` will produce the following output files:
 
     dist/
       hello.html
