@@ -201,4 +201,38 @@ lab.experiment('render()', function() {
     });
   });
 
+  lab.test('generates an error if no template found', function(done) {
+    var context = {
+      engine: 'handlebars',
+      title: 'handlebars test',
+      content: 'some content',
+      templates: path.join(fixtures, 'basic', 'src', '_templates'),
+      template: 'not-found.html'
+    };
+
+    hymark.render(context, function(err, str, ctx) {
+      expect(err).to.be.an.instanceof(Error);
+      expect(err.message).to.include(context.template);
+      expect(str).to.be.undefined();
+      expect(ctx).to.be.undefined();
+      done();
+    });
+  });
+
+  lab.test('generates an error if no templates dir', function(done) {
+    var context = {
+      engine: 'handlebars',
+      content: 'some content',
+      template: 'page.html'
+    };
+
+    hymark.render(context, function(err, str, ctx) {
+      expect(err).to.be.an.instanceof(Error);
+      expect(err.message).to.include('templates');
+      expect(str).to.be.undefined();
+      expect(ctx).to.be.undefined();
+      done();
+    });
+  });
+
 });
