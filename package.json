@@ -32,7 +32,8 @@
     "hymark": "lib/cli.js"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "start": "make start"
   },
   "dependencies": {
     "async": "^0.9.0",

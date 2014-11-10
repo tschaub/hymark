@@ -14,12 +14,6 @@ node_modules/.install: package.json
 	@npm install
 	@touch $@
 
-
-.PHONY: clean
-clean:
-	@rm -rf $(BUILD_DIR)
-
-
 .PHONY: lint
 lint: $(BUILD_DIR)/lib.lint $(BUILD_DIR)/test.lint
 
@@ -33,7 +27,6 @@ $(BUILD_DIR)/test.lint: $(TEST_SCRIPT) .jshintrc node_modules/.install
 	@mkdir -p $(BUILD_DIR)
 	@touch $@
 
-
 .PHONY: test
 test: lint $(BUILD_DIR)/.test
 
@@ -41,3 +34,11 @@ $(BUILD_DIR)/.test: $(TEST_ALL) $(LIB_SCRIPT) node_modules/.install
 	@lab test;
 	@mkdir -p $(BUILD_DIR)
 	@touch $@
+
+.PHONY: start
+start: test node_modules/.install
+	@watchy --watch lib,test -- make test;
+
+.PHONY: clean
+clean:
+	@rm -rf $(BUILD_DIR)
