@@ -1,5 +1,7 @@
 # `hymark`
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tschaub/hymark.svg)](https://greenkeeper.io/)
+
 Render markup using templates and YAML front-mattered content.
 
 ## Installation
